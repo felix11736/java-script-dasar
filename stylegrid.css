@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2d82e2;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 20%;
+    background-color: rgba(95, 73, 221, 0.658);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.carousel-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1px;
+}
+
+.carousel {
+    display: flex;
+    overflow: auto;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-item {
+    min-width: 100%;
+    flex-shrink: 0;
+    transition: transform 0.5s;
+}
+
+.carousel img {
+    width: 19%;
+    height: unset;
+}
+
+

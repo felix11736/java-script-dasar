@@ -1,0 +1,78 @@
+body {
+    margin: 1;
+    padding: 1;
+    font-family: Arial, sans-serif;
+    overflow: inherit;
+    background-color: #ffffff;
+}
+
+
+.login-container {
+    position: bottom ;
+    width: 70%;
+    height: 100vh;
+    display: unset;
+    justify-content: bottom right;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+img {
+    position: static;
+    top: 10;
+    left: 100;
+    width: 20%;
+    height: 50%;
+    object-fit: cover;
+    filter: brightness(0.9); /* Untuk mengurangi kecerahan gambar latar belakang */
+}
+
+video {
+    position: relative;
+    top: 1;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.login-form {
+    background-color: rgba(235, 225, 225, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(236, 243, 234, 0.2);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #ff6600;
+    color: rgb(7, 1, 1);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
