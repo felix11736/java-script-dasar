@@ -1,4 +1,27 @@
+// navbar js
+function myFunction() {
+  document.getElementById("mydrop").classList.toggle("hidden");
+}
+
+window.onclick( (event) => {
+ if (!event.target.matches('.menu-icon')) {
+    var dropdowns = document.getElementsByClassName("menu-list");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('hidden');
+      }
+    }
+  }
+}
+);
+// tutup navbar //
+
+// carousel//t
 const carousel = document.querySelector(".carousel");
+
+
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 let currentIndex = 0;
@@ -25,3 +48,4 @@ nextBtn.addEventListener("click", () => {
 });
 
 showSlide(currentIndex);
+
