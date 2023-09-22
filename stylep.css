@@ -6,7 +6,7 @@ body {
 }
 
 .product-list {
-    display: flex;
+    display: flexbox;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
@@ -14,7 +14,8 @@ body {
 }
 
 .product {
-    width: 300px;
+    display: inline-table;
+    width: 380px;
     margin: 20px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 189, 214, 0.2);
@@ -52,4 +53,11 @@ body {
 /* Animasi Warna */
 .product:hover {
     background-color: #d60606;
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    position:absolute;
+    border-radius: 15px;
 }
