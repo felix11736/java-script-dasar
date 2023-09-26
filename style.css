@@ -7,6 +7,7 @@ body {
 }
 
 
+
 .login-container {
     position: bottom ;
     width: 70%;
@@ -30,9 +31,9 @@ img {
 video {
     position: absolute;
     top: 70px ;
-    left: auto;
-    right: auto;
-    width: 50%;
+    left: 30%;
+    right: 30%;
+    width: 30%;
     height: 40%;
     object-fit: cover;
 }
@@ -74,6 +75,26 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+/* Kode CSS yang tidak responsif */
+
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 100%; /* Mengisi seluruh lebar layar */
+    }
+
+    img {
+        width: 70%;/* Gambar akan mengisi seluruh lebar layar */
+    }
+
+    video {
+        display: none; /* Video akan mengisi seluruh lebar layar */
+    }
+
+    input {
+        width: 100%; /* Input akan mengisi seluruh lebar kontainer */
+    }
 }
 
 

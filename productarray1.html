@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylep.css">
+    <link rel="stylesheet" href="stylegrid.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    
+    <title>Daftar Produk</title>
+</head>
+<body>
+
+<nav>
+    <div class="h1-navbar">
+        <h1>Daftar produk kami</h1>
+    </div>
+    <div onclick="myFunction()" id="menu-icon" class="menu-icon">
+        <i class="ph ph-list"></i>
+    </div>
+    <ul id="mydrop" class="hidden menu-List">
+        <li><a href="index.html">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="">rekomendasi</a></li>
+        <li><a href="#">tentang kami</a></li>
+    </ul>
+</nav>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    
+  </div>
+  
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+
+<div class="product-list">
+    <div class="product-grid">
+        <!-- Produk dari API akan ditampilkan di sini -->
+    </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mySwiper = new Swiper('.swiper-container', {
+      slidesPerView: 4, // Jumlah produk yang ditampilkan dalam tampilan slide
+      spaceBetween: 5, // Jarak antara slide
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // mengambil data produk dari API dan tambahkan ke dalam swiper
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        data.forEach((product, index) => {
+          const productDiv = document.createElement('div');
+          productDiv.classList.add('swiper-slide');
+
+          const productHTML = `
+            <img src="${product.image}" alt="Produk ${index + 1}" />
+            <h3>${product.title}</h3>
+            <p>${product.price}</p>
+            <a href="${product.link}">Selengkapnya</a>
+          `;
+
+          productDiv.innerHTML = productHTML;
+          swiperWrapper.appendChild(productDiv);
+        });
+      });
+  });
+  
+</script>
+<script>
+    // mengambil elemen product-grid
+    const productGrid = document.querySelector(".product-grid");
+
+    //  data produk dari API
+    fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((data) => {
+            // Loop melalui data produk dari API dan tambahkan ke dalam elemen product-grid
+            data.forEach((product, index) => {
+                const productDiv = document.createElement("div");
+                productDiv.classList.add("product-card");
+
+                const productHTML = `
+                    <img src="${product.image}" alt="Produk ${index + 1}" />
+                    <h3>${product.title}</h3>
+                    <p>${product.price}</p>
+                    <p>${product.description}</p>
+                    <a href="${product.link}">Selengkapnya</a>
+                `;
+
+                productDiv.innerHTML = productHTML;
+                productGrid.appendChild(productDiv);
+            });
+        })
+        
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+</html>

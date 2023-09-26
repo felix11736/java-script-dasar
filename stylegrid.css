@@ -55,15 +55,23 @@ align-items: center;
 
 
 
+ .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Membagi kolom menjadi 3 */
+            gap: 20px; /* Jarak antara produk */
+        }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: 20%;
-    background-color: rgba(95, 73, 221, 0.658);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    
-}
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product-card img {
+            max-width: 50%;
+            height: auto;
+        }
+
 
 .carousel-container {
     display: auto;
@@ -90,5 +98,12 @@ align-items: center;
     width: 19%;
     height: unset;
 }
+/* CSS untuk mengatur ukuran gambar dalam carousel */
+.swiper-slide img {
+    max-width: 50%; /* Maksimum lebar gambar sesuai dengan lebar slide */
+    height: 40%;
+    text-decoration: center ;
+}
+
 
 
